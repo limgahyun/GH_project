@@ -143,7 +143,7 @@
 					<img src="/resources/metronic/assets/media/users/100_3.jpg" class="img-rounded img-position" alt="Responsive image">
 					<a href="${pageContext.request.contextPath}/"><span class="glyphicon glyphicon-user" style="padding-right: 10px;"></span>About Me</a>
 					<a href="/reservationHome"><span class="glyphicon glyphicon-th-large" style="padding-right: 10px;"></span>공공물품 예약시스템</a>
-					<a href="/threekingdomsHome"><span class="glyphicon glyphicon-th-large" style="padding-right: 10px;"></span>삼국지</a>
+					<a href="${pageContext.request.contextPath}/threekingdomsHome"><span class="glyphicon glyphicon-th-large" style="padding-right: 10px;"></span>삼국지</a>
 				</nav>
 			</div> 
 		</div>

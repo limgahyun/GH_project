@@ -18,7 +18,7 @@ public class ThreeKingdomsHomeController {
 
 	@RequestMapping(value = "/threekingdomsHome", method = RequestMethod.GET)
 	public String threekingdoms(Locale locale, Model model) {
-		logger.info("Welcome home! The client locale is {}.", locale);
+		logger.info("Welcome ThreeKingdomsHome!");
 		
 		Date date = new Date();
 		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
