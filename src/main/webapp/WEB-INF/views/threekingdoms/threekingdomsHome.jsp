@@ -16,7 +16,7 @@
 	h1 {letter-spacing: 6px}
 </style>
 
-<body class="">
+<body>
 	<%-- Include::Main SideMenu --%>
 	<jsp:include page="../module/slideSideMenu.jsp"/>
 	

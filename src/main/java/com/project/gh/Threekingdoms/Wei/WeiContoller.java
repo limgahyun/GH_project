@@ -22,7 +22,7 @@ public class WeiContoller {
 	 * */
 	@RequestMapping(value = "/kingdomWei", method = RequestMethod.GET)
 	public String threekingdoms(Locale locale, Model model) {
-		logger.info("Welcome home! The client locale is {}.", locale);
+		logger.info("kingdom Wei page");
 		
 		Date date = new Date();
 		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
@@ -39,7 +39,7 @@ public class WeiContoller {
 	 * */
 	@RequestMapping(value = "/formWei", method = RequestMethod.GET)
 	public String formWei(Locale locale, Model model) {
-		logger.info("Welcome home! The client locale is {}.", locale);
+		logger.info("Wei General insert Form");
 		
 		Date date = new Date();
 		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);

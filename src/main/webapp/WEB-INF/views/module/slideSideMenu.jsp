@@ -17,7 +17,7 @@
 		   opacity: 0;
 		}
 		
-		label {
+		.menuLabel {
 		   position: fixed;
 		   top: 10px;
 		   left: 10px;
@@ -137,7 +137,7 @@
 	<%-- SideMenu --%>
 		<div id=check-menu>
 			<input id="toggle" type="checkbox"/>
-			<label for="toggle">&equiv;</label>
+			<label class="menuLabel" for="toggle">&equiv;</label>
 			<div class="slide-menu">
 				<nav id="category">
 					<img src="/resources/metronic/assets/media/users/100_3.jpg" class="img-rounded img-position" alt="Responsive image">
