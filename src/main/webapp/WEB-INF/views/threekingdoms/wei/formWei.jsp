@@ -17,8 +17,10 @@
 			var sel_file;
 			
 			$(document).ready(function() {
+				//파일업로드 이미지 미리보기
 				$("#input_img").on("change", handleImgFileSelect);
 				
+				//등록버튼 클릭 시 이벤트
 				$('#addBtn').click(function(){
 					var generalForm = true;
 					
@@ -48,6 +50,11 @@
 					
 					//location.href = '${pageContext.request.contextPath}/formWei';
 					//$(location).attr('href', './formWei').val();
+				});
+				
+				//취소버튼 클릭 시 이벤트
+				$('#cancelBtn').click(function(){
+					$(location).attr('href', './kingdomWei').val();
 				});
 			});
 			
@@ -105,7 +112,7 @@
 					    </div>
 					    <div class="col-md-2">
 					    	<button id="addBtn" class="btn btn-primary" type="submit" style="margin-left: 95px; margin-top: 5px;">저장</button>
-					    	<button id="cancelBtn" class="btn btn-default" type="cancel" style="margin-top: 5px;">취소</button>
+					    	<button id="cancelBtn" class="btn btn-default" type="button" style="margin-top: 5px;">취소</button>
 				    	</div>
 				    </div>
 				</div>
