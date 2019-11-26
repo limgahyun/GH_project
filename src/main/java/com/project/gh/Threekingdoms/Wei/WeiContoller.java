@@ -6,6 +6,7 @@ import java.util.Locale;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,6 +17,7 @@ import com.project.gh.Threekingdoms.Home.ThreeKingdomsHomeController;
 @Controller
 public class WeiContoller {
 	private static final Logger logger = LoggerFactory.getLogger(ThreeKingdomsHomeController.class);
+	@Autowired WeiService weiService;
 
 	/*
 	 * Kingdom Wei home
@@ -50,5 +52,17 @@ public class WeiContoller {
 		
 		return "/threekingdoms/wei/formWei";
 	}
+	
+	/*
+	 * Kingdom Wei insert
+	 * */
+	@RequestMapping(value = "/insertWeiGeneral", method = RequestMethod.POST)
+	public String insertWeiGeneral(WeiVO weiVo) {
+		logger.debug("insertWeiGeneral");
+		weiService.insertWeiGeneral(weiVo);
+		return "redirect:/threekingdoms/wei/formWei";
+	}
+	
+	
 
 }
