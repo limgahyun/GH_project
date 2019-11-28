@@ -9,6 +9,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -56,11 +57,11 @@ public class WeiContoller {
 	/*
 	 * Kingdom Wei insert
 	 * */
-	@RequestMapping(value = "/insertWeiGeneral", method = RequestMethod.POST)
-	public String insertWeiGeneral(WeiVO weiVo) {
+	@RequestMapping(value = "/insertWeiGeneral", method = RequestMethod.GET)
+	public String insertWeiGeneral(@ModelAttribute WeiVO weiVo) throws Exception {
 		logger.debug("insertWeiGeneral");
 		weiService.insertWeiGeneral(weiVo);
-		return "redirect:/threekingdoms/wei/formWei";
+		return "redirect:/threekingdoms/wei/kingdomWei";
 	}
 	
 	

@@ -11,7 +11,7 @@ public class WeiService {
 	private static final Logger logger = LoggerFactory.getLogger(WeiService.class);
 	
 	//insert
-	public int insertWeiGeneral(WeiVO weiVo) {
+	public int insertWeiGeneral(WeiVO weiVo) throws Exception {
 		logger.info("SERVICE :: insertWeiGeneral");
 		return weiDao.insertWeiGeneral(weiVo);
 	}

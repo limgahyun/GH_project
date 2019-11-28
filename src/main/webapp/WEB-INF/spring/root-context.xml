@@ -3,6 +3,8 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd">
 	
+
+	
 	<!-- Root Context: defines shared resources visible to all other web components -->
  	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource" >
 		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
@@ -17,15 +19,13 @@
 		<!-- ibatis와 다르게 sql디렉토리에 xml 추가만 해주면 별도추가없이 알아서 xml내의 쿼리 인식 -->
 		<property name="mapperLocations">
 			<list>
-                                 <!-- 해당 경로를 통해 xml을 읽어옵니다. -->
+                <!-- 해당 경로를 통해 xml을 읽어옵니다. -->
 				<value>/resources/mappers/*.xml</value>
+				<value>classpath:com/project/gh/Threekingdoms/Wei/WeiMapper.xml</value>
 			</list>
 		</property>
 	</bean>
-	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-                <!-- 해당 Project에서의 Mapper Package를 value로 적어줘야 합니다. ex) com.example.start.Mapper 이러한 형식으로 말입니다. -->
-		<property name="basePackage" value="com.popit.start.Mapper"/> 
-	</bean>
+	
 	<bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
 		<constructor-arg ref="sqlSessionFactory" />
 	</bean>

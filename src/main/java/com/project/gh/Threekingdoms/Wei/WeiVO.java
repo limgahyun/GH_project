@@ -1,19 +1,13 @@
 package com.project.gh.Threekingdoms.Wei;
 
 public class WeiVO {
-	
-	private int idx;
+
 	private String adult_name; //관명
 	private String name;  //자
 	private String explicate;  //설명
 	
 	
-	public int getIdx() {
-		return idx;
-	}
-	public void setIdx(int idx) {
-		this.idx = idx;
-	}
+
 	public String getAdult_name() {
 		return adult_name;
 	}
@@ -35,7 +29,7 @@ public class WeiVO {
 	
 	@Override
 	public String toString() {
-		return "WeiVO [idx=" + idx + ", adult_name=" + adult_name + ", name=" + name + ", explicate=" + explicate + "]";
+		return "WeiVO [adult_name=" + adult_name + ", name=" + name + ", explicate=" + explicate + "]";
 	}
 	
 	

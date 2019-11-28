@@ -14,7 +14,7 @@ public class WeiDAO {
 	final String NS = "com.project.gh.Threekingdoms.Wei.WeiMapper.";
 	
 	//insert
-	public int insertWeiGeneral(WeiVO weiVo) {
+	public int insertWeiGeneral(WeiVO weiVo) throws Exception {
 		logger.info("DAO :: insertWeiGeneral");
 		int row = sqlSession.insert(NS+"insertWeiGeneral", weiVo);
 		return row;

@@ -6,17 +6,15 @@
   <mapper namespace="com.project.gh.Threekingdoms.Wei.WeiMapper">
   
   	<insert id="insertWeiGeneral" parameterType="com.project.gh.Threekingdoms.Wei.WeiVO">
-	INSERT INTO wei_general (
-		idx
-		, adult_name
-		, name
-		, explicate
-	) VALUES (
-		#{idx}
-		, #{adult_name}
-		, #{name}
-		, #{explicate}
-	)
+		INSERT INTO wei_general (
+			adult_name
+			, name
+			, explicate
+		) VALUES (
+			#{adult_name}
+			, #{name}
+			, #{explicate}
+		)
 	</insert>
   
   </mapper>

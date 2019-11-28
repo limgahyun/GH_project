@@ -22,11 +22,11 @@
 				
 				//등록버튼 클릭 시 이벤트
 				$('#addBtn').click(function(){
-					var generalForm = true;
+					 var generalForm = true;
 					
-					if($('#adultName').val() == ''){
+				/* 	if($('#adult_name').val() == ''){
 						alert('장수의 관명을 작성해주세요');
-						$('#adultName').focus();
+						$('#adult_name').focus();
 						generalForm = false;
 						return;
 					}
@@ -42,11 +42,11 @@
 						$('#explicate').focus();
 						generalForm = false;
 						return;
-					}
+					} */
 					
-					if(funtionaryForm = true){
+ 					if(funtionaryForm = true){
 						$('#insertWeiGeneral').submit();
-					}
+					}  
 					
 					//location.href = '${pageContext.request.contextPath}/formWei';
 					//$(location).attr('href', './formWei').val();
@@ -111,14 +111,14 @@
 						    <h4><strong>위나라</strong></h4>
 					    </div>
 					    <div class="col-md-2">
-					    	<button id="addBtn" class="btn btn-primary" type="submit" style="margin-left: 95px; margin-top: 5px;">저장</button>
+					    	
 					    	<button id="cancelBtn" class="btn btn-default" type="button" style="margin-top: 5px;">취소</button>
 				    	</div>
 				    </div>
 				</div>
 				<div class="panel-body">
-					<form action="${pageContext.request.contextPath}/insertWeiGeneral" id="insertWeiGeneral" method="post" enctype="multipart/form-data">
-						<div class="col-sm-5">
+					<form action="${pageContext.request.contextPath}/insertWeiGeneral" id="insertWeiGeneral" method="get" enctype="multipart/form-data">
+						<!-- <div class="col-sm-5">
 							<div class="form-group">
 							    <label for="name" class="control-label">장수 이미지</label>
 							    <div class="img_wrap">
@@ -128,18 +128,18 @@
 							    	<input type="file" name="filename" id="input_img">
 								</div>
 							</div>
-						</div>
+						</div> -->
 						<div class="col-sm-7">
 							<div class="form-group">
-								<label for="adultName" class="col-sm-2 control-label">관명</label>
+								<label for="adult_name" class="col-sm-2 control-label">관명</label>
 							    <div class="col-sm-10">
-							    	<input type="text" class="form-control" id="adultName" name="adultName" placeholder="장수의 관명을 입력해주세요."></br>
+							    	<input type="text" class="form-control" id="adult_name" name="adult_name" placeholder="장수의 관명을 입력해주세요."/></br>
 								</div>
 							</div>
 							<div class="form-group">
 								<label for="name" class="col-sm-2 control-label">자</label>
 							    <div class="col-sm-10">
-							    	<input type="text" class="form-control" id="name" name="name" placeholder="장수의 자를 입력해주세요."></br>
+							    	<input type="text" class="form-control" id="name" name="name" placeholder="장수의 자를 입력해주세요."/></br>
 								</div>
 							</div>
 							<div class="form-group">
@@ -149,7 +149,7 @@
 								</div>
 							</div>
 						</div>
-						
+						<button id="addBtn" class="btn btn-primary" type="button" style="margin-left: 95px; margin-top: 5px;">저장</button>
 					</form>
 				</div>
 			</div>
