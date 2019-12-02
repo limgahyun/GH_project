@@ -1,19 +1,15 @@
 package com.project.gh.Threekingdoms.Wei;
 
-import java.io.File;
 import java.text.DateFormat;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
-
-import javax.annotation.Resource;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.util.FileCopyUtils;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -26,7 +22,6 @@ import com.project.gh.Threekingdoms.Home.ThreeKingdomsHomeController;
 public class WeiContoller {
 	private static final Logger logger = LoggerFactory.getLogger(ThreeKingdomsHomeController.class);
 	@Autowired WeiService weiService;
-	@Resource(name="uploadPath") String uploadPath;
 	
 
 	/*
@@ -61,7 +56,7 @@ public class WeiContoller {
 	 * 위나라 장수추가하기 insert
 	 * */
 	@RequestMapping(value = "/insertWeiGeneral", method = RequestMethod.GET)
-	public String insertWeiGeneral(@ModelAttribute WeiVO weiVo, MultipartFile file, ModelAndView mav) throws Exception {
+	public String insertWeiGeneral(@ModelAttribute WeiVO weiVo) throws Exception {
 		logger.debug("insertWeiGeneral");
 		
 		weiService.insertWeiGeneral(weiVo);

@@ -112,15 +112,15 @@
 						    <h4><strong>위나라</strong></h4>
 					    </div>
 					    <div class="col-md-2">
-					    	
+					    	<button id="addBtn" class="btn btn-primary" type="button" style="margin-left: 95px; margin-top: 5px;">저장</button>
 					    	<button id="cancelBtn" class="btn btn-default" type="button" style="margin-top: 5px;">취소</button>
 				    	</div>
 				    </div>
 				</div>
 				<div class="panel-body">
 					<form action="${pageContext.request.contextPath}/insertWeiGeneral" id="insertWeiGeneral" method="get" enctype="multipart/form-data">
-						 <!-- 파일업로드 -->
-						 <div class="col-sm-5">
+						<!-- 파일업로드 -->
+						<div class="col-sm-5">
 							<div class="form-group">
 							    <label for="name" class="control-label">장수 이미지</label>
 							    <div class="img_wrap">
@@ -130,7 +130,7 @@
 							    	<input type="file" name="filename" id="input_img">
 								</div>
 							</div>
-						</div> 
+						</div>
 						<!-- 입력 폼 -->
 						<div class="col-sm-7">
 							<div class="form-group">
@@ -148,11 +148,11 @@
 							<div class="form-group">
 							    <label for="explicate" class="col-sm-2 control-label">장수 설명</label>
 							    <div class="col-sm-10">
-							    	<textarea class="form-control" rows="3" id="explicate" name="explicate"></textarea>
+							    	<textarea class="form-control" rows="5" id="explicate" name="explicate"></textarea>
 								</div>
 							</div>
 						</div>
-						<button id="addBtn" class="btn btn-primary" type="button" style="margin-left: 95px; margin-top: 5px;">저장</button>
+						
 					</form>
 				</div>
 			</div>
