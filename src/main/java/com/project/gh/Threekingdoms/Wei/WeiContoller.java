@@ -7,7 +7,6 @@ import java.util.List;
 import java.util.Locale;
 
 import javax.annotation.Resource;
-import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -62,35 +61,15 @@ public class WeiContoller {
 	 * 위나라 장수추가하기 insert
 	 * */
 	@RequestMapping(value = "/insertWeiGeneral", method = RequestMethod.GET)
-	public String insertWeiGeneral(WeiRequest weiRequest, Model model, HttpSession session) throws Exception {
+	public String insertWeiGeneral(@ModelAttribute WeiVO weiVo, MultipartFile file, ModelAndView mav) throws Exception {
 		logger.debug("insertWeiGeneral");
-
 		
-		List<MultipartFile> list = weiRequest.getMultipartFile();
-		logger.debug("list : " + list);
-		
-		for(MultipartFile file : list) {
-			String fileType = file.getContentType();			
-			logger.debug("fileType : " + fileType);
-			
-			if(!fileType.equals("image/jpeg") && !fileType.equals("image/jpg") && !fileType.equals("image/png") 
-				&& !fileType.equals("image/bmp") && fileType.equals("image/webp")) {
-				
-				logger.debug("fileType : " + fileType);
-				logger.info("이미지 파일이 아닙니다.");
-				model.addAttribute("error", "alert('이미지 파일이 아닙니다.')");
-				
-				return "/threekingdoms/wei/formWei";
-			
-			}	
-		}		
-		
-		String path = session.getServletContext().getRealPath("/resources/image/goodsFacilityImage/");		
-		logger.debug("path : " + path);
-		weiService.insertWeiGeneral(weiRequest, path);
+		weiService.insertWeiGeneral(weiVo);
 		return "redirect:/kingdomWei";
-	
 	}
+	
+
+	
 	
 
 }

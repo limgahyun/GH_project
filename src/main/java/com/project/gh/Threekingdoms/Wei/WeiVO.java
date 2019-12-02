@@ -1,14 +1,11 @@
 package com.project.gh.Threekingdoms.Wei;
 
-import java.util.List;
-
 public class WeiVO {
 
 	private int wei_id;
 	private String adult_name; //관명
 	private String name;  //자
 	private String explicate;  //장수설명
-	private List<WeiFile> weiFile;
 	
 	
 
@@ -36,16 +33,10 @@ public class WeiVO {
 	public void setExplicate(String explicate) {
 		this.explicate = explicate;
 	}
-	public List<WeiFile> getWeiFile() {
-		return weiFile;
-	}
-	public void setWeiFile(List<WeiFile> weiFile) {
-		this.weiFile = weiFile;
-	}
 	@Override
 	public String toString() {
 		return "WeiVO [wei_id=" + wei_id + ", adult_name=" + adult_name + ", name=" + name + ", explicate=" + explicate
-				+ ", weiFile=" + weiFile + "]";
+				+ "]";
 	}
 	
 	
