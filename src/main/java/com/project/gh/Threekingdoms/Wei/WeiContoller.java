@@ -1,18 +1,25 @@
 package com.project.gh.Threekingdoms.Wei;
 
+import java.io.File;
 import java.text.DateFormat;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
+
+import javax.annotation.Resource;
+import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.util.FileCopyUtils;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.project.gh.Threekingdoms.Home.ThreeKingdomsHomeController;
 
@@ -20,6 +27,8 @@ import com.project.gh.Threekingdoms.Home.ThreeKingdomsHomeController;
 public class WeiContoller {
 	private static final Logger logger = LoggerFactory.getLogger(ThreeKingdomsHomeController.class);
 	@Autowired WeiService weiService;
+	@Resource(name="uploadPath") String uploadPath;
+	
 
 	/*
 	 * 위나라 홈 리스트 
@@ -53,14 +62,35 @@ public class WeiContoller {
 	 * 위나라 장수추가하기 insert
 	 * */
 	@RequestMapping(value = "/insertWeiGeneral", method = RequestMethod.GET)
-	public String insertWeiGeneral(@ModelAttribute WeiVO weiVo) throws Exception {
+	public String insertWeiGeneral(WeiRequest weiRequest, Model model, HttpSession session) throws Exception {
 		logger.debug("insertWeiGeneral");
-		weiService.insertWeiGeneral(weiVo);
-		return "redirect:/kingdomWei";
-	}
-	
 
+		
+		List<MultipartFile> list = weiRequest.getMultipartFile();
+		logger.debug("list : " + list);
+		
+		for(MultipartFile file : list) {
+			String fileType = file.getContentType();			
+			logger.debug("fileType : " + fileType);
+			
+			if(!fileType.equals("image/jpeg") && !fileType.equals("image/jpg") && !fileType.equals("image/png") 
+				&& !fileType.equals("image/bmp") && fileType.equals("image/webp")) {
+				
+				logger.debug("fileType : " + fileType);
+				logger.info("이미지 파일이 아닙니다.");
+				model.addAttribute("error", "alert('이미지 파일이 아닙니다.')");
+				
+				return "/threekingdoms/wei/formWei";
+			
+			}	
+		}		
+		
+		String path = session.getServletContext().getRealPath("/resources/image/goodsFacilityImage/");		
+		logger.debug("path : " + path);
+		weiService.insertWeiGeneral(weiRequest, path);
+		return "redirect:/kingdomWei";
 	
+	}
 	
 
 }

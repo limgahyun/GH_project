@@ -27,10 +27,10 @@
 
 <body class="w3-light-grey">
 	<%-- Include::Main SideMenu --%>
-	 <jsp:include page="../../module/slideSideMenu.jsp"/>
+	 <%-- <jsp:include page="../../module/slideSideMenu.jsp"/> --%>
 	
 	<!-- Include::Header -->
-	<jsp:include page="../header.jsp"/>
+	<%-- <jsp:include page="../header.jsp"/> --%>
 	
 	<!-- BEGIN::Page content -->
 	<div  class="w3-content"style="max-width:1600px">	
@@ -132,7 +132,7 @@
 	</div>
 	
 	<!-- Include::Footer -->
-	<jsp:include page="../footer.jsp"/>
+	<%-- <jsp:include page="../footer.jsp"/> --%>
 
 </body>
 </html>

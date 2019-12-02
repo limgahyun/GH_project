@@ -1,5 +1,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page session="false" contentType="text/html; charset=UTF-8"%>
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -24,7 +25,7 @@
 				$('#addBtn').click(function(){
 					 var generalForm = true;
 					
-				/* 	if($('#adult_name').val() == ''){
+				 	if($('#adult_name').val() == ''){
 						alert('장수의 관명을 작성해주세요');
 						$('#adult_name').focus();
 						generalForm = false;
@@ -42,7 +43,7 @@
 						$('#explicate').focus();
 						generalForm = false;
 						return;
-					} */
+					} 
 					
  					if(funtionaryForm = true){
 						$('#insertWeiGeneral').submit();
@@ -118,7 +119,8 @@
 				</div>
 				<div class="panel-body">
 					<form action="${pageContext.request.contextPath}/insertWeiGeneral" id="insertWeiGeneral" method="get" enctype="multipart/form-data">
-						<!-- <div class="col-sm-5">
+						 <!-- 파일업로드 -->
+						 <div class="col-sm-5">
 							<div class="form-group">
 							    <label for="name" class="control-label">장수 이미지</label>
 							    <div class="img_wrap">
@@ -128,7 +130,8 @@
 							    	<input type="file" name="filename" id="input_img">
 								</div>
 							</div>
-						</div> -->
+						</div> 
+						<!-- 입력 폼 -->
 						<div class="col-sm-7">
 							<div class="form-group">
 								<label for="adult_name" class="col-sm-2 control-label">관명</label>
