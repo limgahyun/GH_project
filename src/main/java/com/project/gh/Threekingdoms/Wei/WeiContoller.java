@@ -2,6 +2,7 @@ package com.project.gh.Threekingdoms.Wei;
 
 import java.text.DateFormat;
 import java.util.Date;
+import java.util.List;
 import java.util.Locale;
 
 import org.slf4j.Logger;
@@ -21,24 +22,18 @@ public class WeiContoller {
 	@Autowired WeiService weiService;
 
 	/*
-	 * Kingdom Wei home
+	 * 위나라 홈 리스트 
 	 * */
 	@RequestMapping(value = "/kingdomWei", method = RequestMethod.GET)
-	public String threekingdoms(Locale locale, Model model) {
-		logger.info("kingdom Wei page");
-		
-		Date date = new Date();
-		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
-		
-		String formattedDate = dateFormat.format(date);
-		
-		model.addAttribute("serverTime", formattedDate );
-		
-		return "/threekingdoms/wei/kingdomWei";
+	public String selectWeiGeneral(Model model) throws Exception {
+		logger.debug("kingdom Wei page");
+		List<WeiVO> weiVo = weiService.selectWeiGeneral();
+		model.addAttribute("weiVo", weiVo);
+		return "threekingdoms/wei/kingdomWei";
 	}
 	
 	/*
-	 * Kingdom Wei insert Form
+	 * 위나라 장수추가 폼 insert Form
 	 * */
 	@RequestMapping(value = "/formWei", method = RequestMethod.GET)
 	public String formWei(Locale locale, Model model) {
@@ -55,14 +50,16 @@ public class WeiContoller {
 	}
 	
 	/*
-	 * Kingdom Wei insert
+	 * 위나라 장수추가하기 insert
 	 * */
 	@RequestMapping(value = "/insertWeiGeneral", method = RequestMethod.GET)
 	public String insertWeiGeneral(@ModelAttribute WeiVO weiVo) throws Exception {
 		logger.debug("insertWeiGeneral");
 		weiService.insertWeiGeneral(weiVo);
-		return "redirect:/threekingdoms/wei/kingdomWei";
+		return "redirect:/kingdomWei";
 	}
+	
+
 	
 	
 

@@ -1,5 +1,7 @@
 package com.project.gh.Threekingdoms.Wei;
 
+import java.util.List;
+
 import org.mybatis.spring.SqlSessionTemplate;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -18,6 +20,12 @@ public class WeiDAO {
 		logger.info("DAO :: insertWeiGeneral");
 		int row = sqlSession.insert(NS+"insertWeiGeneral", weiVo);
 		return row;
+	}
+	
+	//select
+	public List<WeiVO> selectWeiGeneral() {
+		logger.info("DAO :: selectWeiGeneral");
+		return sqlSession.selectList(NS+"selectWeiGeneral");
 	}
 
 }
