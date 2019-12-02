@@ -2,9 +2,9 @@ package com.project.gh.Threekingdoms.Wei;
 
 public class WeiVO {
 
-	private String adult_name; //°όΈν
-	private String name;  //ΐΪ
-	private String explicate;  //Ό³Έν
+	private String adult_name; //κ΄€λª…
+	private String name;  //μ
+	private String explicate;  //μ¥μμ„¤λª…
 	
 	
 

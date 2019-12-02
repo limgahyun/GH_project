@@ -44,79 +44,19 @@
 		</div>
 		<br>
 		<!-- First Photo Grid-->
-		<div class="w3-row-padding">
-			<div class="w3-third w3-container w3-margin-bottom">
-				<a href="#"><img src="${pageContext.request.contextPath}/resources/threekingdoms/image/wei.jpg" alt="위나라" style="width:100%;" class="w3-hover-opacity"></a>
-				<div class="w3-container w3-white">
-					<p><h3><b>Lorem Ipsum</b></h3></p>
-					<p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
+		<c:forEach var="weiVo" items="${weiList}">
+			<div class="w3-row-padding">
+				<div class="w3-third w3-container w3-margin-bottom">
+					<a href="#"><img src="${pageContext.request.contextPath}/resources/threekingdoms/image/wei.jpg" alt="위나라" style="width:100%;" class="w3-hover-opacity"></a>
+					<div class="w3-container w3-white">
+						<p><h3><b>${weiVo.adult_name}<small>${weiVo.name}</small></b></h3></p>
+						<p>${weiVo.explicate}</p>
+					</div>
 				</div>
 			</div>
-			<div class="w3-third w3-container w3-margin-bottom">
-				<a href="#"><img src="${pageContext.request.contextPath}/resources/threekingdoms/image/wei_back.jpg" alt="위나라" style="width:100%;" class="w3-hover-opacity"></a>
-				<div class="w3-container w3-white">
-					<p><h3><b>Lorem Ipsum</b></h3></p>
-					<p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
-				</div>
-			</div>
-			<div class="w3-third w3-container w3-margin-bottom">
-				<a href="#"><img src="${pageContext.request.contextPath}/resources/threekingdoms/image/wei_back.jpg" alt="위나라" style="width:100%;" class="w3-hover-opacity"></a>
-				<div class="w3-container w3-white">
-					<p><h3><b>Lorem Ipsum</b></h3></p>
-					<p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
-				</div>
-			</div>
-		</div>
+		</c:forEach>
 		
-		<!-- Second Photo Grid-->
-		<div class="w3-row-padding">
-			<div class="w3-third w3-container w3-margin-bottom">
-				<a href="#"><img src="${pageContext.request.contextPath}/resources/threekingdoms/image/wei_back.jpg" alt="위나라" style="width:100%;" class="w3-hover-opacity"></a>
-				<div class="w3-container w3-white">
-					<p><h3><b>Lorem Ipsum</b></h3></p>
-					<p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
-				</div>
-			</div>
-			<div class="w3-third w3-container w3-margin-bottom">
-				<a href="#"><img src="${pageContext.request.contextPath}/resources/threekingdoms/image/wei_back.jpg" alt="위나라" style="width:100%;" class="w3-hover-opacity"></a>
-				<div class="w3-container w3-white">
-					<p><h3><b>Lorem Ipsum</b></h3></p>
-					<p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>			
-				</div>
-			</div>
-			<div class="w3-third w3-container">
-				<img src="${pageContext.request.contextPath}/resources/threekingdoms/image/wei_back.jpg" alt="Norway" style="width:100%" class="w3-hover-opacity">
-				<div class="w3-container w3-white">
-					<p><h3><b>Lorem Ipsum</b></h3></p>
-					<p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
-				</div>
-			</div>
-		</div>
 		
-		<!-- Third Photo Grid-->
-		<div class="w3-row-padding" >
-			<div class="w3-third w3-container w3-margin-bottom">
-				<a href="#"><img src="${pageContext.request.contextPath}/resources/threekingdoms/image/wei_back.jpg" alt="위나라" style="width:100%;" class="w3-hover-opacity"></a>
-				<div class="w3-container w3-white">
-					<p><h3><b>Lorem Ipsum</b></h3></p>
-					<p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
-				</div>
-			</div>
-			<div class="w3-third w3-container w3-margin-bottom">
-				<a href="#"><img src="${pageContext.request.contextPath}/resources/threekingdoms/image/wei_back.jpg" alt="위나라" style="width:100%;" class="w3-hover-opacity"></a>
-				<div class="w3-container w3-white">
-					<p><h3><b>Lorem Ipsum</b></h3></p>
-					<p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>			
-				</div>
-			</div>
-			<div class="w3-third w3-container">
-				<img src="${pageContext.request.contextPath}/resources/threekingdoms/image/wei_back.jpg" alt="Norway" style="width:100%" class="w3-hover-opacity">
-				<div class="w3-container w3-white">
-					<p><h3><b>Lorem Ipsum</b></h3></p>
-					<p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
-				</div>
-			</div>
-		</div>
 		
 		<!-- Pagination -->
 	  <div class="w3-center w3-padding-32" style="padding-bottom: 120px;">
