@@ -45,7 +45,7 @@
 						return;
 					} 
 					
- 					if(funtionaryForm = true){
+ 				 	if(funtionaryForm = true){
 						$('#insertWeiGeneral').submit();
 					}  
 					
@@ -112,13 +112,13 @@
 						    <h4><strong>위나라</strong></h4>
 					    </div>
 					    <div class="col-md-2">
-					    	<button id="addBtn" class="btn btn-primary" type="button" style="margin-left: 95px; margin-top: 5px;">저장</button>
+					    	<input id="addBtn" class="btn btn-primary" type="submit" value="등록" style="margin-left: 95px; margin-top: 5px;"/>
 					    	<button id="cancelBtn" class="btn btn-default" type="button" style="margin-top: 5px;">취소</button>
 				    	</div>
 				    </div>
 				</div>
 				<div class="panel-body">
-					<form action="${pageContext.request.contextPath}/insertWeiGeneral" id="insertWeiGeneral" method="get" enctype="multipart/form-data">
+					<form action="${pageContext.request.contextPath}/insertWeiGeneral" id="insertWeiGeneral" method="post" enctype="multipart/form-data">
 						<!-- 파일업로드 -->
 						<div class="col-sm-5">
 							<div class="form-group">
@@ -127,7 +127,7 @@
 							    	<img id="img"/>
 							    </div>
 							    <div class="col-sm-10">
-							    	<input type="file" name="filename" id="input_img">
+							    	<input type="file" name="multipartfile" id="input_img">
 								</div>
 							</div>
 						</div>
@@ -151,8 +151,7 @@
 							    	<textarea class="form-control" rows="5" id="explicate" name="explicate"></textarea>
 								</div>
 							</div>
-						</div>
-						
+						</div>	
 					</form>
 				</div>
 			</div>

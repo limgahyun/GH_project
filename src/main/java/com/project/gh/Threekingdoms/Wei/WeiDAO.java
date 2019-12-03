@@ -17,14 +17,14 @@ public class WeiDAO {
 	
 	//insert
 	public int insertWeiGeneral(WeiVO weiVO) throws Exception {
-		logger.info("DAO :: insertWeiGeneral");
+		logger.info("DAO::insertWeiGeneral");
 		int row = sqlSession.insert(NS+"insertWeiGeneral", weiVO);
 		return row;
 	}
 	
 	//select
 	public List<WeiVO> selectWeiGeneral() {
-		logger.info("DAO :: selectWeiGeneral");
+		logger.info("DAO::selectWeiGeneral");
 		return sqlSession.selectList(NS+"selectWeiGeneral");
 	}
 

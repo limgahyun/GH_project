@@ -2,20 +2,15 @@ package com.project.gh.Threekingdoms.Wei;
 
 import java.util.List;
 
-public class WeiVO {
+import org.springframework.web.multipart.MultipartFile;
 
-	private int wei_id;
+public class WeiRequest {
+	
 	private String adult_name; //관명
 	private String name;  //자
 	private String explicate;  //장수설명
-	private List<FileWeiVO> fileWei;
+	private List<MultipartFile> multipartfile;
 	
-	public int getWei_id() {
-		return wei_id;
-	}
-	public void setWei_id(int wei_id) {
-		this.wei_id = wei_id;
-	}
 	public String getAdult_name() {
 		return adult_name;
 	}
@@ -34,24 +29,17 @@ public class WeiVO {
 	public void setExplicate(String explicate) {
 		this.explicate = explicate;
 	}
-	public List<FileWeiVO> getFileWei() {
-		return fileWei;
+	public List<MultipartFile> getMultipartfile() {
+		return multipartfile;
 	}
-	public void setFileWei(List<FileWeiVO> fileWei) {
-		this.fileWei = fileWei;
+	public void setMultipartfile(List<MultipartFile> multipartfile) {
+		this.multipartfile = multipartfile;
 	}
 	
 	@Override
 	public String toString() {
-		return "WeiVO [wei_id=" + wei_id + ", adult_name=" + adult_name + ", name=" + name + ", explicate=" + explicate
-				+ ", fileWei=" + fileWei + "]";
+		return "FileWeiRequest [adult_name=" + adult_name + ", name=" + name + ", explicate=" + explicate
+				+ ", multipartfile=" + multipartfile + "]";
 	}
 	
-
-	
-	
-	
-	
-	
-
 }
