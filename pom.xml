@@ -17,6 +17,18 @@
 		<org.slf4j-version>1.6.6</org.slf4j-version>
 	</properties>
 	<dependencies>
+		<dependency> 
+			<groupId>commons-fileupload</groupId> 
+			<artifactId>commons-fileupload</artifactId> 
+			<version>1.2.1</version> 
+		</dependency> 
+		
+		<dependency> 
+			<groupId>commons-io</groupId> 
+			<artifactId>commons-io</artifactId> 
+			<version>1.4</version> 
+		</dependency>
+
 		<!-- JDBC 처리 -->
 		<dependency>
 			<groupId>org.springframework</groupId>
