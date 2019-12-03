@@ -5,6 +5,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
+import javax.servlet.ServletRequest;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -26,6 +27,7 @@ import com.project.gh.Threekingdoms.Home.ThreeKingdomsHomeController;
 public class WeiContoller {
 	private static final Logger logger = LoggerFactory.getLogger(ThreeKingdomsHomeController.class);
 	@Autowired WeiService weiService;
+	
 	
 
 	/*
@@ -60,13 +62,14 @@ public class WeiContoller {
 	/*
 	 * 위나라 장수추가하기 insert
 	 * */
-	@RequestMapping(value = "/insertWeiGeneral", method = RequestMethod.POST)
-	public String insertWeiGeneral(HttpSession session, WeiRequest weiRequest, Model model) throws Exception {
+	@RequestMapping(value = "/insertWeiGeneral", method = RequestMethod.POST, produces="text/plain;charset=UTF-8")
+	public String insertWeiGeneral(HttpSession session, WeiRequest weiRequest, Model model, ServletRequest request) throws Exception {
+		request.setCharacterEncoding("utf-8");
 		logger.debug("Controller::insertWeiGeneral");
+		logger.info("*****************" + weiRequest);
 		
 		List<MultipartFile> list = weiRequest.getMultipartfile();
 		logger.debug("list : " + list);
-		
 		for(MultipartFile file : list) {
 			String fileType = file.getContentType();
 			
