@@ -30,7 +30,7 @@
 		<div class="w3-row w3-padding-64" id="about">
 			<div class="w3-col m6 w3-padding-large w3-hide-small">
 				<!-- <img src="/main/resources/Threekingdoms/image/peach.jpg" class="w3-round w3-image w3-opacity-min" alt="Three Kingdoms Map" width="600" height="750"> -->
-				<img src="/resources/threekingdoms/image/threekingdoms_map.jpg" class="w3-round w3-image w3-opacity-min" alt="Three Kingdoms Map" width="600" height="750">
+				<img src="${pageContext.request.contextPath}/resources/threekingdoms/image/threekingdoms_map.jpg"" class="w3-round w3-image w3-opacity-min" alt="Three Kingdoms Map" width="600" height="750">
 			</div>
 			
 			<div class="w3-col m6 w3-padding-large">

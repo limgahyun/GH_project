@@ -11,12 +11,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.project.gh.Threekingdoms.Home.ThreeKingdomsHomeController;
-
 @Controller
 public class WeiContoller {
-	private static final Logger logger = LoggerFactory.getLogger(ThreeKingdomsHomeController.class);
 	@Autowired WeiService weiService;
+	private static final Logger logger = LoggerFactory.getLogger(WeiContoller.class);
 	
 	
 	/*
@@ -42,7 +40,7 @@ public class WeiContoller {
 	}
 	
 	/*
-	 * 위나라 장수추가하기 insert
+	 * 위나라 장수추가 insert
 	 * */
 	@RequestMapping(value = "/insertWeiGeneral", method = RequestMethod.POST, produces="text/plain;charset=UTF-8")
 	public String insertWeiGeneral(WeiVO weiVo, Model model) throws Exception {

@@ -44,7 +44,7 @@
 		</div>
 		<br>		
 		
-		<!-- First Photo Grid-->
+		<!-- Photo Grid content -->
 		<div class="w3-row-padding">
 			<c:forEach var="weiList" items="${weiVo}">
 				<div class="w3-third w3-container w3-margin-bottom">
@@ -57,19 +57,17 @@
 			</c:forEach>
 		</div>
 		
-		
-		
 		<!-- Pagination -->
-	  <div class="w3-center w3-padding-32" style="padding-bottom: 120px;">
-	    <div class="w3-bar">
-	      <a href="#" class="w3-bar-item w3-button w3-hover-black">«</a>
-	      <a href="#" class="w3-bar-item w3-black w3-button">1</a>
-	      <a href="#" class="w3-bar-item w3-button w3-hover-black">2</a>
-	      <a href="#" class="w3-bar-item w3-button w3-hover-black">3</a>
-	      <a href="#" class="w3-bar-item w3-button w3-hover-black">4</a>
-	      <a href="#" class="w3-bar-item w3-button w3-hover-black">»</a>
-	    </div>
-	  </div>
+		<div class="w3-center w3-padding-32" style="padding-bottom: 120px;">
+			<div class="w3-bar">
+				<a href="#" class="w3-bar-item w3-button w3-hover-black">«</a>
+				<a href="#" class="w3-bar-item w3-black w3-button">1</a>
+				<a href="#" class="w3-bar-item w3-button w3-hover-black">2</a>
+				<a href="#" class="w3-bar-item w3-button w3-hover-black">3</a>
+				<a href="#" class="w3-bar-item w3-button w3-hover-black">4</a>
+				<a href="#" class="w3-bar-item w3-button w3-hover-black">»</a>
+			</div>
+		</div>
 	</div>
 	
 	<!-- Include::Footer -->
