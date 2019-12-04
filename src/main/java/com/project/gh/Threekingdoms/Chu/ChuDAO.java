@@ -1,6 +1,7 @@
 package com.project.gh.Threekingdoms.Chu;
 
 import java.util.List;
+import java.util.Map;
 
 import org.mybatis.spring.SqlSessionTemplate;
 import org.slf4j.Logger;
@@ -16,10 +17,16 @@ public class ChuDAO {
 	
 	
 	//select
-	public List<ChuVO> selectChuGeneral() {
+	public List<ChuVO> selectChuGeneral(Map<String, Object> map) {
 		logger.info("DAO::selectChuGeneral");
-		return sqlSession.selectList(NS+"selectChuGeneral");
+		return sqlSession.selectList(NS+"selectChuGeneral", map);
 	}
+	
+	//select List Count
+		public int countChuList(Map<String, Object> map) {
+			logger.debug("DAO::countChuList");
+			return sqlSession.selectOne(NS+"countChuList", map);
+		}
 	
 	//insert
 	public int insertChuGeneral(ChuVO chuVO) throws Exception {

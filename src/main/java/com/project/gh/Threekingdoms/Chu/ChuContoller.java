@@ -1,9 +1,9 @@
 package com.project.gh.Threekingdoms.Chu;
 
-import java.text.DateFormat;
-import java.util.Date;
-import java.util.List;
 import java.util.Locale;
+import java.util.Map;
+
+import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -12,8 +12,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-
-import com.project.gh.Threekingdoms.Wei.WeiService;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class ChuContoller {
@@ -25,11 +24,18 @@ public class ChuContoller {
 	 * 촉나라 홈 리스트
 	 */
 	@RequestMapping(value = "/kingdomChu", method = RequestMethod.GET)
-	public String threekingdoms(Model model) {
+	public String threekingdoms(Model model
+									, HttpSession session
+									, @RequestParam(value="currentPage", defaultValue="1") int currentPage
+									, @RequestParam(value="pagePerRow", defaultValue="9", required=true) int pagePerRow) {
 		logger.debug("Controller::kingdom Chu Listpage");
 		
-		List<ChuVO> chuVo = chuService.selectChuGeneral();
-		model.addAttribute("chuVo", chuVo);
+		Map<String, Object> map = chuService.selectChuGeneral(currentPage, pagePerRow);
+		model.addAttribute("chuVo", map.get("chuVo"));
+		model.addAttribute("lastPage", map.get("lastPage"));
+		model.addAttribute("beginPageNumForCurrentPage", map.get("beginPageNumForCurrentPage"));
+		model.addAttribute("currentPage", currentPage);
+		model.addAttribute("pagePerRow", pagePerRow);
 		
 		return "/threekingdoms/chu/kingdomChu";
 	}

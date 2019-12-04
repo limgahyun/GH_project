@@ -54,7 +54,6 @@ public class WeiService {
 		returnMap.put("beginPageNumForCurrentPage", beginPageNumForCurrentPage);
 		
 		return returnMap;
-		//return weiDao.selectWeiGeneral();
 	}
 		
 	//insert

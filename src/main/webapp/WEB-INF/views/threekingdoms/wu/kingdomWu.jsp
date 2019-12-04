@@ -51,12 +51,65 @@
 		<!-- Pagination -->
 		<div class="w3-center w3-padding-32" style="padding-bottom: 120px;">
 			<div class="w3-bar">
-				<a href="#" class="w3-bar-item w3-button w3-hover-black">«</a>
-				<a href="#" class="w3-bar-item w3-black w3-button">1</a>
-				<a href="#" class="w3-bar-item w3-button w3-hover-black">2</a>
-				<a href="#" class="w3-bar-item w3-button w3-hover-black">3</a>
-				<a href="#" class="w3-bar-item w3-button w3-hover-black">4</a>
-				<a href="#" class="w3-bar-item w3-button w3-hover-black">»</a>
+				<a  class="w3-bar-item w3-button w3-hover-black" href="${pageContext.request.contextPath}/kingdomWu?currentPage=1&pagePerRow=${pagePerRow}&searchSignal=${searchSignal}&searchSelect=${searchSelect}&searchWord=${searchWord}" aria-label="Previous" >
+					<span aria-hidden="true">&laquo;</span>
+				</a>
+				
+				<c:choose>
+					<c:when test="${currentPage > 1}">
+						<a  class="w3-bar-item w3-button w3-hover-black" href="${pageContext.request.contextPath}/kingdomWu?currentPage=${currentPage-1}&pagePerRow=${pagePerRow}&searchSignal=${searchSignal}&searchSelect=${searchSelect}&searchWord=${searchWord}" aria-label="Previous">
+							<span aria-hidden="true">&lt;</span>
+						</a>
+					</c:when>
+					<c:otherwise>
+						<a  class="w3-bar-item w3-button w3-hover-black" href="${pageContext.request.contextPath}/kingdomWu?currentPage=1&pagePerRow=${pagePerRow}&searchSignal=${searchSignal}&searchSelect=${searchSelect}&searchWord=${searchWord}" aria-label="Previous">
+							<span aria-hidden="true">&lt;</span>
+						</a>
+					</c:otherwise>
+				</c:choose>
+				
+				<c:choose>
+					<c:when test="${lastPage > beginPageNumForCurrentPage + 4}">
+						<c:forEach var="pageNum" begin="${beginPageNumForCurrentPage}" end="${beginPageNumForCurrentPage + 4}" step="1">
+							<c:choose>
+								<c:when test="${pageNum == currentPage}">
+									<a class="w3-bar-item w3-black w3-button" href="${pageContext.request.contextPath}/kingdomWu?currentPage=${pageNum}&pagePerRow=${pagePerRow}&searchSignal=${searchSignal}&searchSelect=${searchSelect}&searchWord=${searchWord}">${pageNum}</a>
+								</c:when>
+								<c:otherwise>
+									<a class="w3-bar-item w3-button w3-hover-black" href="${pageContext.request.contextPath}/kingdomWu?currentPage=${pageNum}&pagePerRow=${pagePerRow}&searchSignal=${searchSignal}&searchSelect=${searchSelect}&searchWord=${searchWord}">${pageNum}</a>
+								</c:otherwise>
+							</c:choose>
+						</c:forEach>
+					</c:when>
+					<c:otherwise>
+						<c:forEach var="pageNum" begin="${beginPageNumForCurrentPage}" end="${lastPage}" step="1">
+							<c:choose>
+								<c:when test="${pageNum == currentPage}">
+									<a class="w3-bar-item w3-black w3-button"  href="${pageContext.request.contextPath}/kingdomWu?currentPage=${pageNum}&pagePerRow=${pagePerRow}&searchSignal=${searchSignal}&searchSelect=${searchSelect}&searchWord=${searchWord}">${pageNum}</a>
+								</c:when>
+								<c:otherwise>
+									<a class="w3-bar-item w3-button w3-hover-black" href="${pageContext.request.contextPath}/kingdomWu?currentPage=${pageNum}&pagePerRow=${pagePerRow}&searchSignal=${searchSignal}&searchSelect=${searchSelect}&searchWord=${searchWord}">${pageNum}</a>
+								</c:otherwise>
+							</c:choose>
+						</c:forEach>
+					</c:otherwise>
+				</c:choose>
+				
+				<c:choose>
+					<c:when test="${currentPage < lastPage}">
+						<a  class="w3-bar-item w3-button w3-hover-black" href="${pageContext.request.contextPath}/kingdomWu?currentPage=${currentPage+1}&pagePerRow=${pagePerRow}&searchSignal=${searchSignal}&searchSelect=${searchSelect}&searchWord=${searchWord}" aria-label="Next">
+							<span aria-hidden="true">&gt;</span>
+						</a>
+					</c:when>
+					<c:otherwise>
+						<a  class="w3-bar-item w3-button w3-hover-black" href="${pageContext.request.contextPath}/kingdomWu?currentPage=${lastPage}&pagePerRow=${pagePerRow}&searchSignal=${searchSignal}&searchSelect=${searchSelect}&searchWord=${searchWord}"aria-label="Next">
+							<span aria-hidden="true">&gt;</span>
+						</a>
+					</c:otherwise>
+				</c:choose>
+				<a  class="w3-bar-item w3-button w3-hover-black" href="${pageContext.request.contextPath}/kingdomWu?currentPage=${lastPage}&pagePerRow=${pagePerRow}&searchSignal=${searchSignal}&searchSelect=${searchSelect}&searchWord=${searchWord}" aria-label="Next">
+					<span aria-hidden="true">&raquo;</span>
+				</a>
 			</div>
 		</div>
 	</div>

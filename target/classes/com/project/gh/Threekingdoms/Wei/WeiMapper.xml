@@ -18,6 +18,7 @@
 			, #{pagePerRow}
 	</select>
 	
+	<!-- 홈리스트 페이징  -->
 	<select id="countWeiList" parameterType="java.util.Map" resultType="Integer">
   			SELECT
   				COUNT(*)
