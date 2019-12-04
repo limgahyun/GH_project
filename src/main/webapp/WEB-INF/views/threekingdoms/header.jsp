@@ -16,10 +16,9 @@
 			<div class="w3-padding-32">
 				<div class="w3-bar w3-border">
 					<a href="${pageContext.request.contextPath}/threekingdomsHome" class="w3-bar-item w3-button">Home</a>
-					<a href="${pageContext.request.contextPath}/threekingdomsIntro" class="w3-bar-item w3-button">인물소개</a>
+					<a href="${pageContext.request.contextPath}/threekingdomsIntro" class="w3-bar-item w3-button">나라별 인물소개</a>
 					<a href="#" class="w3-bar-item w3-button">스토리텔링</a>
 					<a href="#" class="w3-bar-item w3-button">주요전투</a>
-					<a href="#" class="w3-bar-item w3-button w3-hide-small">자유게시판</a>
 				</div>
 			</div>
 		</header>

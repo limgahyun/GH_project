@@ -1,6 +1,7 @@
 package com.project.gh.Threekingdoms.Wu;
 
 import java.util.List;
+import java.util.Map;
 
 import org.mybatis.spring.SqlSessionTemplate;
 import org.slf4j.Logger;
@@ -14,17 +15,23 @@ public class WuDAO {
 	private static final Logger logger = LoggerFactory.getLogger(WuDAO.class);
 	final String NS = "com.project.gh.Threekingdoms.Wu.WuMapper.";
 	
-	//insert
-	public int insertWuGeneral(WuVO wuVO) throws Exception {
-		logger.info("DAO::insertWuGeneral");
-		int row = sqlSession.insert(NS+"insertWuGeneral", wuVO);
-		return row;
-	}
 	
 	//select
-	public List<WuVO> selectWuGeneral() {
+	public List<WuVO> selectWuGeneral(Map<String, Object> map) {
 		logger.info("DAO::selectWuGeneral");
-		return sqlSession.selectList(NS+"selectWuGeneral");
+		return sqlSession.selectList(NS+"selectWuGeneral", map);
 	}
+	
+	//select List Count
+		public int countWuList(Map<String, Object> map) {
+			logger.debug("DAO::countWuList");
+			return sqlSession.selectOne(NS+"countWuList", map);
+		}
 
+		//insert
+		public int insertWuGeneral(WuVO wuVO) throws Exception {
+			logger.info("DAO::insertWuGeneral");
+			int row = sqlSession.insert(NS+"insertWuGeneral", wuVO);
+			return row;
+		}
 }

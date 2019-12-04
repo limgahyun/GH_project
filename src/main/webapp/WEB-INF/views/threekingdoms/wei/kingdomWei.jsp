@@ -12,6 +12,10 @@
 
 	<script>
 		$(document).ready(function() {
+			$('#backBtn').click(function(){
+				$(location).attr('href', './threekingdomsIntro').val();
+			});
+			
 			$('#addBtn').click(function(){
 				//location.href = '${pageContext.request.contextPath}/formWei';
 				$(location).attr('href', './formWei').val();
@@ -38,11 +42,17 @@
 	
 	<!-- BEGIN::Page content -->
 	<div  class="w3-content"style="max-width:1600px">	
-		<div class="row" >
-			<div class="col-md-11"></div>
+		<div class="row w3-row-padding">
+			<div class="col-md-11">
+				<ol class="breadcrumb">
+				  <li><a href="${pageContext.request.contextPath}/threekingdomsHome">Home</a></li>
+				  <li><a href="${pageContext.request.contextPath}/threekingdomsIntro">나라별 인물소개</a></li>
+				  <li class="active">위나라</li>
+				</ol>
+			</div>
 			<div class="col-md-1">
 				<span class="input-group-btn">
-					<button id="addBtn" class="btn btn-primary" type="button">장수추가</button>
+					<button id="addBtn" class="btn btn-primary btn-sm" type="button">장수추가</button>
 				</span>
 			</div>
 		</div>

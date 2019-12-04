@@ -11,8 +11,20 @@
 			adult_name as adult_name
 			, name as name
 			, explicate as explicate
-		FROM wu_general
+		FROM 
+			wu_general
+		LIMIT 
+			#{beginRow}
+			, #{pagePerRow}
 	</select>
+	
+	<!-- 홈리스트 페이징  -->
+	<select id="countWuList" parameterType="java.util.Map" resultType="Integer">
+		SELECT
+			COUNT(*)
+		FROM
+			wu_general			
+  	</select> 
 	
   	<!-- 위나라 장수 등록 -->
   	<insert id="insertWuGeneral" parameterType="com.project.gh.Threekingdoms.Wu.WuVO">
