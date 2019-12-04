@@ -76,10 +76,9 @@
 				});
 			}
 			
-			
-	
-	</script>
+		</script>
 	</head>
+	
 	<style>
 		body,h1 {font-family: "Raleway", Arial, sans-serif}
 		h1 {letter-spacing: 6px}
@@ -119,6 +118,7 @@
 				<div class="panel-body">
 					<form action="${pageContext.request.contextPath}/insertWeiGeneral" id="insertWeiGeneral" method="post" enctype="multipart/form-data">
 						<!-- 파일업로드 -->
+						<!-- 
 						<div class="col-sm-5">
 							<div class="form-group">
 							    <label for="name" class="control-label">장수 이미지</label>
@@ -126,10 +126,11 @@
 							    	<img id="img"/>
 							    </div>
 							    <div class="col-sm-10">
-							    	<input type="file" name="multipartfile" id="input_img">
+							    	<input type="file" name="multipartFile" id="input_img">
 								</div>
 							</div>
-						</div>
+						</div> 
+						-->
 						<!-- 입력 폼 -->
 						<div class="col-sm-7">
 							<div class="form-group">
