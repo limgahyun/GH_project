@@ -13,6 +13,13 @@ public class WeiService {
 	@Autowired WeiDAO weiDao;
 	private static final Logger logger = LoggerFactory.getLogger(WeiService.class);
 	
+	
+	//select
+	public List<WeiVO> selectWeiGeneral() {
+		logger.info("SERVICE :: selectWeiGeneral");
+		return weiDao.selectWeiGeneral();
+	}
+		
 	//insert
 	@Transactional
 	public int insertWeiGeneral(WeiVO weiVo) throws Exception {
@@ -20,10 +27,5 @@ public class WeiService {
 		return weiDao.insertWeiGeneral(weiVo);
 	}
 	
-	//select
-	public List<WeiVO> selectWeiGeneral() {
-		logger.info("SERVICE :: selectWeiGeneral");
-		return weiDao.selectWeiGeneral();
-	}
 
 }

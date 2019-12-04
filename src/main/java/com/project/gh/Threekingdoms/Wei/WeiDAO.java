@@ -10,10 +10,15 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public class WeiDAO {
-	
 	@Autowired private SqlSessionTemplate sqlSession;
 	private static final Logger logger = LoggerFactory.getLogger(WeiDAO.class);
 	final String NS = "com.project.gh.Threekingdoms.Wei.WeiMapper.";
+	
+	//select
+	public List<WeiVO> selectWeiGeneral() {
+		logger.info("DAO::selectWeiGeneral");
+		return sqlSession.selectList(NS+"selectWeiGeneral");
+	}
 	
 	//insert
 	public int insertWeiGeneral(WeiVO weiVO) throws Exception {
@@ -22,10 +27,5 @@ public class WeiDAO {
 		return row;
 	}
 	
-	//select
-	public List<WeiVO> selectWeiGeneral() {
-		logger.info("DAO::selectWeiGeneral");
-		return sqlSession.selectList(NS+"selectWeiGeneral");
-	}
 
 }
