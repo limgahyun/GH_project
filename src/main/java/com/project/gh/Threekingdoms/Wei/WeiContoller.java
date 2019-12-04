@@ -1,7 +1,9 @@
 package com.project.gh.Threekingdoms.Wei;
 
-import java.util.List;
 import java.util.Locale;
+import java.util.Map;
+
+import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -10,6 +12,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class WeiContoller {
@@ -21,11 +24,19 @@ public class WeiContoller {
 	 * 위나라 홈 리스트 
 	 * */
 	@RequestMapping(value = "/kingdomWei", method = RequestMethod.GET)
-	public String selectWeiGeneral(Model model) throws Exception {
+	public String selectWeiGeneral(Model model
+									, HttpSession session
+									, @RequestParam(value="currentPage", defaultValue="1") int currentPage
+									, @RequestParam(value="pagePerRow", defaultValue="9", required=true) int pagePerRow ) throws Exception {
 		logger.debug("Controller::kingdom Wei Listpage");
-		List<WeiVO> weiVo = weiService.selectWeiGeneral();
-		model.addAttribute("weiVo", weiVo);
-
+		
+		Map<String, Object> map = weiService.selectWeiGeneral(currentPage, pagePerRow);
+		model.addAttribute("weiVo", map.get("weiVo"));
+		model.addAttribute("lastPage", map.get("lastPage"));
+		model.addAttribute("beginPageNumForCurrentPage", map.get("beginPageNumForCurrentPage"));
+		model.addAttribute("currentPage", currentPage);
+		model.addAttribute("pagePerRow", pagePerRow);
+			 
 		return "threekingdoms/wei/kingdomWei";
 	}
 	

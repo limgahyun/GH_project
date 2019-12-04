@@ -6,13 +6,25 @@
   <mapper namespace="com.project.gh.Threekingdoms.Wei.WeiMapper">
   
 	<!-- 위나라 장수 홈 리스트 -->
-	<select id="selectWeiGeneral" resultType="com.project.gh.Threekingdoms.Wei.WeiVO">
+	<select id="selectWeiGeneral" parameterType="java.util.Map" resultType="com.project.gh.Threekingdoms.Wei.WeiVO">
 		SELECT
 			adult_name as adult_name
 			, name as name
 			, explicate as explicate
-		FROM wei_general
+		FROM 
+			wei_general
+		LIMIT 
+			#{beginRow}
+			, #{pagePerRow}
 	</select>
+	
+	<select id="countWeiList" parameterType="java.util.Map" resultType="Integer">
+  			SELECT
+  				COUNT(*)
+  			FROM
+  				wei_general			
+  	</select> 
+  	
   
   	<!-- 위나라 장수 등록 -->
   	<insert id="insertWeiGeneral" parameterType="com.project.gh.Threekingdoms.Wei.WeiVO">
@@ -29,3 +41,5 @@
 	
   
   </mapper>
+  
+  

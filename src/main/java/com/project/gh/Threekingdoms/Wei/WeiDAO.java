@@ -1,6 +1,7 @@
 package com.project.gh.Threekingdoms.Wei;
 
 import java.util.List;
+import java.util.Map;
 
 import org.mybatis.spring.SqlSessionTemplate;
 import org.slf4j.Logger;
@@ -15,9 +16,15 @@ public class WeiDAO {
 	final String NS = "com.project.gh.Threekingdoms.Wei.WeiMapper.";
 	
 	//select
-	public List<WeiVO> selectWeiGeneral() {
+	public List<WeiVO> selectWeiGeneral(Map<String, Object> map) {
 		logger.info("DAO::selectWeiGeneral");
-		return sqlSession.selectList(NS+"selectWeiGeneral");
+		return sqlSession.selectList(NS+"selectWeiGeneral", map);
+	}
+	
+	//select List Count
+	public int countWeiList(Map<String, Object> map) {
+		logger.debug("DAO::countWeiList");
+		return sqlSession.selectOne(NS+"countWeiList", map);
 	}
 	
 	//insert
