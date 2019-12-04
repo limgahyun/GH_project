@@ -37,9 +37,9 @@
 		
 		<!-- Photo Grid content -->
 		<div class="w3-row-padding">
-			<c:forEach var="chuList" items="${ChoVo}">
+			<c:forEach var="chuList" items="${chuVo}">
 				<div class="w3-third w3-container w3-margin-bottom">
-					<a href="#"><img src="${pageContext.request.contextPath}/resources/threekingdoms/image/wei.jpg" alt="위나라" style="width:100%;" class="w3-hover-opacity"></a>
+					<a href="#"><img src="${pageContext.request.contextPath}/resources/threekingdoms/image/chu.jpg" alt="위나라" style="width:100%;" class="w3-hover-opacity"></a>
 					<div class="w3-container w3-white">
 						<p><h3><b>${chuList.adult_name}<small>${chuList.name}</small></b></h3></p>
 						<p>${chuList.explicate}</p>

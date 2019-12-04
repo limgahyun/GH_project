@@ -22,6 +22,8 @@
                 <!-- 해당 경로를 통해 xml을 읽어옵니다. -->
 				<value>/resources/mappers/*.xml</value>
 				<value>classpath:com/project/gh/Threekingdoms/Wei/WeiMapper.xml</value>
+				<value>classpath:com/project/gh/Threekingdoms/Chu/ChuMapper.xml</value>
+				<value>classpath:com/project/gh/Threekingdoms/Wu/WuMapper.xml</value>
 			</list>
 		</property>
 	</bean>

@@ -40,8 +40,7 @@ public class ChuContoller {
 	 * */
 	@RequestMapping(value = "/formChu", method = RequestMethod.GET)
 	public String formChu(Locale locale, Model model) {
-		logger.info("Controller::Chu General insert Form");
-		
+		logger.info("Controller::Chu General insert Form");	
 		return "/threekingdoms/chu/formChu";
 	}
 	

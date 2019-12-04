@@ -17,7 +17,7 @@ public class ChuDAO {
 	
 	//select
 	public List<ChuVO> selectChuGeneral() {
-		logger.info("DAO::selectWeiGeneral");
+		logger.info("DAO::selectChuGeneral");
 		return sqlSession.selectList(NS+"selectChuGeneral");
 	}
 	
