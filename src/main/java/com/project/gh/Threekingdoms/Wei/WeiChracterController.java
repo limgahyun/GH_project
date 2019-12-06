@@ -21,7 +21,6 @@ public class WeiChracterController {
 		logger.info("Controller::kingdoms Wei Character");
 		
 		weiVo = weiService.weiCharacterIntro(weiVo);
-		logger.info("weiVo ::::::" + weiVo);
 		model.addAttribute("weiVo", weiVo);
 		
 		return "threekingdoms/wei/characterIntro";

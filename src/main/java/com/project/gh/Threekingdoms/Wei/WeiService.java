@@ -59,7 +59,6 @@ public class WeiService {
 	//select one View
 	public WeiVO weiCharacterIntro(WeiVO weiVo) {
 		logger.debug("SERVICE :: weiCharacterIntro");
-		logger.info("SERVICE :: weiVo ::::::" + weiVo);
 		return weiDao.weiCharacterIntro(weiVo);
 	}
 		

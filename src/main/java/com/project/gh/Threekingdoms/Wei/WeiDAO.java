@@ -30,7 +30,6 @@ public class WeiDAO {
 	//select one View
 	public WeiVO weiCharacterIntro(WeiVO weiVo) {
 		logger.debug("DAO::weiCharacterIntro");
-		logger.info("DAO :: weiVo ::::::" + weiVo);
 		return sqlSession.selectOne(NS+"weiCharacterIntro", weiVo);
 	}
 	
