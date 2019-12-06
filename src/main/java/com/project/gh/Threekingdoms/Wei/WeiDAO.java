@@ -16,15 +16,22 @@ public class WeiDAO {
 	final String NS = "com.project.gh.Threekingdoms.Wei.WeiMapper.";
 	
 	//select
-	public List<WeiVO> selectWeiGeneral(Map<String, Object> map) {
+	public List<WeiVO> listWeiGeneral(Map<String, Object> map) {
 		logger.info("DAO::selectWeiGeneral");
-		return sqlSession.selectList(NS+"selectWeiGeneral", map);
+		return sqlSession.selectList(NS+"listWeiGeneral", map);
 	}
 	
 	//select List Count
 	public int countWeiList(Map<String, Object> map) {
 		logger.debug("DAO::countWeiList");
 		return sqlSession.selectOne(NS+"countWeiList", map);
+	}
+	
+	//select one View
+	public WeiVO weiCharacterIntro(WeiVO weiVo) {
+		logger.debug("DAO::weiCharacterIntro");
+		logger.info("DAO :: weiVo ::::::" + weiVo);
+		return sqlSession.selectOne(NS+"weiCharacterIntro", weiVo);
 	}
 	
 	//insert

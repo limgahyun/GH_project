@@ -24,13 +24,13 @@ public class WeiContoller {
 	 * 위나라 홈 리스트 
 	 * */
 	@RequestMapping(value = "/kingdomWei", method = RequestMethod.GET)
-	public String selectWeiGeneral(Model model
+	public String listWeiGeneral(Model model
 									, HttpSession session
 									, @RequestParam(value="currentPage", defaultValue="1") int currentPage
 									, @RequestParam(value="pagePerRow", defaultValue="9", required=true) int pagePerRow ) throws Exception {
 		logger.debug("Controller::kingdom Wei Listpage");
 		
-		Map<String, Object> map = weiService.selectWeiGeneral(currentPage, pagePerRow);
+		Map<String, Object> map = weiService.listWeiGeneral(currentPage, pagePerRow);
 		model.addAttribute("weiVo", map.get("weiVo"));
 		model.addAttribute("lastPage", map.get("lastPage"));
 		model.addAttribute("beginPageNumForCurrentPage", map.get("beginPageNumForCurrentPage"));

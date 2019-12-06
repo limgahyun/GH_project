@@ -6,11 +6,11 @@
   <mapper namespace="com.project.gh.Threekingdoms.Wei.WeiMapper">
   
 	<!-- 위나라 장수 홈 리스트 -->
-	<select id="selectWeiGeneral" parameterType="java.util.Map" resultType="com.project.gh.Threekingdoms.Wei.WeiVO">
+	<select id="listWeiGeneral" parameterType="java.util.Map" resultType="com.project.gh.Threekingdoms.Wei.WeiVO">
 		SELECT
-			adult_name as adult_name
+			wei_id as wei_id
+			, adult_name as adult_name
 			, name as name
-			, explicate as explicate
 		FROM 
 			wei_general
 		LIMIT 
@@ -26,17 +26,25 @@
   				wei_general			
   	</select> 
   	
+  	<!-- 장수 선택 시, 상세보기 -->
+  	<select id="weiCharacterIntro" resultType="com.project.gh.Threekingdoms.Wei.WeiVO">
+  		SELECT
+  			*
+		FROM
+			wei_general
+		WHERE
+			wei_id = #{wei_id}
+  	</select>
+  	
   
   	<!-- 위나라 장수 등록 -->
   	<insert id="insertWeiGeneral" parameterType="com.project.gh.Threekingdoms.Wei.WeiVO">
 		INSERT INTO wei_general (
 			adult_name
 			, name
-			, explicate
 		) VALUES (
 			#{adult_name}
 			, #{name}
-			, #{explicate}
 		)
 	</insert>
 	

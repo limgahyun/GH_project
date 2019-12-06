@@ -17,8 +17,8 @@ public class WeiService {
 	
 	
 	//select
-	public Map<String, Object> selectWeiGeneral(int currentPage, int pagePerRow) {
-		logger.info("SERVICE :: selectWeiGeneral");
+	public Map<String, Object> listWeiGeneral(int currentPage, int pagePerRow) {
+		logger.info("SERVICE :: listWeiGeneral");
 		
 		int beginRow = (currentPage-1)*pagePerRow;
 			logger.info("currentPage :" + currentPage);
@@ -30,7 +30,7 @@ public class WeiService {
 			logger.info("pagePerRow :" + pagePerRow);
 
 		
-		List<WeiVO> weiVo = weiDao.selectWeiGeneral(map);
+		List<WeiVO> weiVo = weiDao.listWeiGeneral(map);
 		logger.debug("List<WeiVO> : " + weiVo);
 		
 		int total = weiDao.countWeiList(map); 
@@ -54,6 +54,13 @@ public class WeiService {
 		returnMap.put("beginPageNumForCurrentPage", beginPageNumForCurrentPage);
 		
 		return returnMap;
+	}
+	
+	//select one View
+	public WeiVO weiCharacterIntro(WeiVO weiVo) {
+		logger.debug("SERVICE :: weiCharacterIntro");
+		logger.info("SERVICE :: weiVo ::::::" + weiVo);
+		return weiDao.weiCharacterIntro(weiVo);
 	}
 		
 	//insert

@@ -62,10 +62,13 @@
 		<div class="w3-row-padding">
 			<c:forEach var="weiList" items="${weiVo}">
 				<div class="w3-third w3-container w3-margin-bottom">
-					<a href="#"><img src="${pageContext.request.contextPath}/resources/threekingdoms/image/wei.jpg" alt="위나라" style="width:100%;" class="w3-hover-opacity"></a>
+					<a href="${pageContext.request.contextPath}/weiCharacterIntro?wei_id=${weiList.wei_id}">
+						<img src="${pageContext.request.contextPath}/resources/threekingdoms/image/wei.jpg" alt="위나라" style="width:100%;" class="w3-hover-opacity">
+					</a>
 					<div class="w3-container w3-white">
+						<input type=hidden value="${weiList.wei_id}"/>
 						<p><h3><b>${weiList.adult_name}<small>${weiList.name}</small></b></h3></p>
-						<p>${weiList.explicate}</p>
+						<%-- <p>${weiList.explicate}</p> --%>
 					</div>
 				</div>
 			</c:forEach>
