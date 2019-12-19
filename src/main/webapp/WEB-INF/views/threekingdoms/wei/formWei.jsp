@@ -102,7 +102,7 @@
 		<jsp:include page="../header.jsp"/>
 		
 		<!-- BEGIN::Page content -->
-		<div  class="w3-content"style="max-width:1600px">	
+		<div  class="w3-content"style="max-width:1000px">	
 			<div class="panel panel-danger">
 				<div class="panel-heading">
 					<div class="row" >
@@ -110,48 +110,85 @@
 						    <h4><strong>위나라</strong></h4>
 					    </div>
 					    <div class="col-md-2">
-					    	<input id="addBtn" class="btn btn-primary" type="submit" value="등록" style="margin-left: 95px; margin-top: 5px;"/>
+					    	<input id="addBtn" class="btn btn-primary" type="submit" value="등록" style="margin-top: 5px;"/>
 					    	<button id="cancelBtn" class="btn btn-default" type="button" style="margin-top: 5px;">취소</button>
 				    	</div>
 				    </div>
 				</div>
-				<div class="panel-body">
+				<div class="panel-body form-horizontal">
 					<form action="${pageContext.request.contextPath}/insertWeiGeneral" id="insertWeiGeneral" method="post" enctype="multipart/form-data">
 						<!-- 파일업로드 -->
-						<!-- 
-						<div class="col-sm-5">
-							<div class="form-group">
-							    <label for="name" class="control-label">장수 이미지</label>
-							    <div class="img_wrap">
+						 
+						
+							 <div class="form-group">
+							    <label for="name" class="col-sm-2 control-label">장수 이미지</label>
+							    <div class="img_wrap" style="margin-left:180px;">
 							    	<img id="img"/>
 							    </div>
-							    <div class="col-sm-10">
+							    <div class="col-sm-8" style="margin-left:170px;">
 							    	<input type="file" name="multipartFile" id="input_img">
 								</div>
 							</div>
-						</div> 
-						-->
+						
+						
 						<!-- 입력 폼 -->
-						<div class="col-sm-7">
+					
 							<div class="form-group">
 								<label for="adult_name" class="col-sm-2 control-label">관명</label>
-							    <div class="col-sm-10">
+							    <div class="col-sm-9">
 							    	<input type="text" class="form-control" id="adult_name" name="adult_name" placeholder="장수의 관명을 입력해주세요."/></br>
 								</div>
 							</div>
+							
 							<div class="form-group">
 								<label for="name" class="col-sm-2 control-label">자</label>
-							    <div class="col-sm-10">
+							    <div class="col-sm-9">
 							    	<input type="text" class="form-control" id="name" name="name" placeholder="장수의 자를 입력해주세요."/></br>
 								</div>
 							</div>
+							
 							<div class="form-group">
-							    <label for="explicate" class="col-sm-2 control-label">장수 설명</label>
-							    <div class="col-sm-10">
-							    	<textarea class="form-control" rows="5" id="explicate" name="explicate"></textarea>
+								<label for="birth_death" class="col-sm-2 control-label">출생 및 사망</label>
+							    <div class="col-sm-9">
+							    	<input type="text" class="form-control" id="birth_death" name="birth_death" placeholder="출생 및 사망 시기를 입력해주세요."/></br>
 								</div>
 							</div>
-						</div>	
+							
+							<div class="form-group">
+							    <label for="introduce" class="col-sm-2 control-label">장수 소개</label>
+							    <div class="col-sm-9">
+							    	<textarea class="form-control" rows="5" id="introduce" name="introduce"></textarea></br>
+								</div>
+							</div>
+							
+							<div class="form-group">
+							    <label for="life" class="col-sm-2 control-label">장수의 생애</label>
+							    <div class="col-sm-9">
+							    	<textarea class="form-control" rows="5" id="life" name="life"></textarea></br>
+								</div>
+							</div>
+							
+							<div class="form-group">
+							    <label for="rating_1" class="col-sm-2 control-label">평가1</label>
+							    <div class="col-sm-9">
+							    	<textarea class="form-control" rows="5" id="rating_1" name="rating_1"></textarea></br>
+								</div>
+							</div>
+							
+							<div class="form-group">
+							    <label for="rating_2" class="col-sm-2 control-label">평가2</label>
+							    <div class="col-sm-9">
+							    	<textarea class="form-control" rows="5" id="rating_2" name="rating_2"></textarea></br>
+								</div>
+							</div>
+							
+							<div class="form-group">
+							    <label for="rating_3" class="col-sm-2 control-label">평가3</label>
+							    <div class="col-sm-9">
+							    	<textarea class="form-control" rows="5" id="rating_3" name="rating_3"></textarea>
+								</div>
+							</div>
+							
 					</form>
 				</div>
 			</div>

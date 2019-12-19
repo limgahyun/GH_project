@@ -50,7 +50,6 @@
 					<div class="w3-content" style="max-width:700px">
 						<input type="hidden" value="${weiVo.wei_id}">
 						<h1 class="w3-center">${weiVo.adult_name}</h1>
-						<p class="w3-center w3-large w3-text-grey w3-hide-medium">${weiVo.name_etc}</p>
 						<h5 class="w3-center w3-text-grey">${weiVo.birth_death}</h5>
 						
 						<br>
@@ -74,7 +73,7 @@
 				<div class="w3-container" id="rating">
 					<div class="w3-content" style="max-width:700px">
 						<h5 class="w3-center w3-padding-48"><span class="w3-tag w3-wide">평가</span></h5>
-						<p>${weiVo.rating}</p>
+						<p>${weiVo.rating_1}</p>
 						<div class="w3-panel w3-leftbar w3-light-grey">
 							<p><i>"Use products from nature for what it's worth - but never too early, nor too late." Fresh is the new sweet.</i></p>
 							<p>Chef, Coffeeist and Owner: Liam Brown</p>

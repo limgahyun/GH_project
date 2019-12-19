@@ -42,9 +42,21 @@
 		INSERT INTO wei_general (
 			adult_name
 			, name
+			, birth_death
+			, introduce
+			, life
+			, rating_1
+			, rating_2
+			, rating_3
 		) VALUES (
 			#{adult_name}
 			, #{name}
+			, #{birth_death}
+			, #{introduce}
+			, #{life}
+			, #{rating_1}
+			, #{rating_2}
+			, #{rating_3}
 		)
 	</insert>
 	

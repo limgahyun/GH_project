@@ -53,11 +53,25 @@ public class WeiContoller {
 	/*
 	 * 위나라 장수추가 insert
 	 * */
-	@RequestMapping(value = "/insertWeiGeneral", method = RequestMethod.POST, produces="text/plain;charset=UTF-8")
+	@RequestMapping(value = "/insertWeiGeneral", method = RequestMethod.POST)
 	public String insertWeiGeneral(WeiVO weiVo, Model model) throws Exception {
 		logger.debug("Controller::insertWeiGeneral");
 		weiService.insertWeiGeneral(weiVo);
 		return "redirect:/kingdomWei";
+	}
+	
+	
+	/*
+	 * 위나라 개별 장수 소개
+	 * */
+	@RequestMapping(value = "/weiCharacterIntro", method = RequestMethod.GET)
+	public String weiCharacterIntro(Model model, WeiVO weiVo) {
+		logger.info("Controller::kingdoms Wei Character");
+		
+		weiVo = weiService.weiCharacterIntro(weiVo);
+		model.addAttribute("weiVo", weiVo);
+		
+		return "threekingdoms/wei/characterIntro";
 	}
 	
 
