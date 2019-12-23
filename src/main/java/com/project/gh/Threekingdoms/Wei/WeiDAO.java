@@ -15,30 +15,35 @@ public class WeiDAO {
 	private static final Logger logger = LoggerFactory.getLogger(WeiDAO.class);
 	final String NS = "com.project.gh.Threekingdoms.Wei.WeiMapper.";
 	
-	//select
+	//장수 목록
 	public List<WeiVO> listWeiGeneral(Map<String, Object> map) {
 		logger.info("DAO::selectWeiGeneral");
 		return sqlSession.selectList(NS+"listWeiGeneral", map);
 	}
 	
-	//select List Count
+	//장수 목록 페이징
 	public int countWeiList(Map<String, Object> map) {
 		logger.debug("DAO::countWeiList");
 		return sqlSession.selectOne(NS+"countWeiList", map);
 	}
 	
-	//select one View
+	//개별 장수 보기
 	public WeiVO weiCharacterIntro(WeiVO weiVo) {
 		logger.debug("DAO::weiCharacterIntro");
 		return sqlSession.selectOne(NS+"weiCharacterIntro", weiVo);
 	}
 	
-	//insert
+	//장수 등록
 	public int insertWeiGeneral(WeiVO weiVO) throws Exception {
 		logger.info("DAO::insertWeiGeneral");
 		int row = sqlSession.insert(NS+"insertWeiGeneral", weiVO);
 		return row;
 	}
 	
+	//장수 수정 폼 이동 
+	public WeiVO modifyFormWeiGeneral(WeiVO weiVO){
+		logger.info("---modifyFormWeiGeneral");
+		return sqlSession.selectOne(NS+"modifyFormWeiGeneral", weiVO);
+	}
 
 }

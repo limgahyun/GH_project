@@ -2,7 +2,7 @@
 <%@ page session="false" contentType="text/html; charset=UTF-8"%>
 <html>
 	<head>
-		<title>Three Kingdoms :: Wei Character</title>
+		<title>삼국지 :: 위나라 장수</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -17,7 +17,8 @@
 				
 				$('#updateBtn').click(function(){
 					//location.href = '${pageContext.request.contextPath}/formWei';
-					$(location).attr('href', '#').val();
+					$(location).attr('href', './modifyFormWeiGeneral?wei_id=' + $('#weiId').val());
+				
 				});
 			});
 		</script>
@@ -48,7 +49,7 @@
 				<!-- introduce Container -->
 				<div class="w3-container" id="introduce">
 					<div class="w3-content" style="max-width:700px">
-						<input type="hidden" value="${weiVo.wei_id}">
+						<input type="hidden" id="weiId" value="${weiVo.wei_id}">
 						<h1 class="w3-center">${weiVo.adult_name}</h1>
 						<h5 class="w3-center w3-text-grey">${weiVo.birth_death}</h5>
 						

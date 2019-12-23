@@ -16,7 +16,7 @@ public class WeiService {
 	private static final Logger logger = LoggerFactory.getLogger(WeiService.class);
 	
 	
-	//select
+	//장수 목록 및 페이징
 	public Map<String, Object> listWeiGeneral(int currentPage, int pagePerRow) {
 		logger.info("SERVICE :: listWeiGeneral");
 		
@@ -56,17 +56,23 @@ public class WeiService {
 		return returnMap;
 	}
 	
-	//select one View
+	//개별 장수 보기
 	public WeiVO weiCharacterIntro(WeiVO weiVo) {
 		logger.debug("SERVICE :: weiCharacterIntro");
 		return weiDao.weiCharacterIntro(weiVo);
 	}
 		
-	//insert
+	//장수 등록
 	@Transactional
 	public int insertWeiGeneral(WeiVO weiVo) throws Exception {
 		logger.info("SERVICE :: insertWeiGeneral");
 		return weiDao.insertWeiGeneral(weiVo);
+	}
+	
+	//장수 수정 폼 이동
+	public WeiVO modifyFormWeiGeneral(WeiVO weiVo)  {	
+		logger.info("modifyFormWeiGeneral");
+		return weiDao.modifyFormWeiGeneral(weiVo); 
 	}
 	
 

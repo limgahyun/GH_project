@@ -60,6 +60,23 @@
 		)
 	</insert>
 	
+	<!--장수 수정 불러오기 -->
+	<select id="modifyFormWeiGeneral" parameterType="com.project.gh.Threekingdoms.Wei.WeiVO" resultType="com.project.gh.Threekingdoms.Wei.WeiVO">
+		select 
+			wei_id AS wei_id
+			, adult_name AS adult_name
+			, NAME AS name
+			, birth_death AS birth_death
+			, introduce AS introduce
+			, life AS life
+			, rating_1 AS rating_1
+			, rating_2 AS rating_2
+			, rating_3 AS rating_3
+		from wei_general
+		where 
+			wei_id = #{wei_id}
+	</select>
+	
   
   </mapper>
   

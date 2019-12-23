@@ -74,6 +74,18 @@ public class WeiContoller {
 		return "threekingdoms/wei/characterIntro";
 	}
 	
+	/*
+	 * 위나라 장수  수정 폼 이동
+	 * */
+	@RequestMapping(value = "/modifyFormWeiGeneral", method = RequestMethod.GET)
+	public String modifyFormWeiGeneral(WeiVO weiVo, Model model) {
+		logger.info("Controller::kingdoms Wei Character modify Form");
+		
+		weiVo = weiService.modifyFormWeiGeneral(weiVo);		
+		model.addAttribute("weiVo", weiVo);
+		return "/threekingdoms/wei/modifyWei";  
+	}  
+	
 
 	
 
