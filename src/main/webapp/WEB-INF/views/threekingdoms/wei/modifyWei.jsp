@@ -45,7 +45,8 @@
 					} 
 					
  				 	if(funtionaryForm = true){
-						$('#insertWeiGeneral').submit();
+						$('#modifyFormWeiGeneral').submit();
+ 				 		
 					}  
 					
 					//location.href = '${pageContext.request.contextPath}/formWei';
@@ -117,7 +118,7 @@
 				</div>
 				<div class="panel-body form-horizontal">
 					<input type="hidden" id="weiId" value="${weiVo.wei_id}">
-					<form action="${pageContext.request.contextPath}/modifyFormWeiGeneral" id="modifyFormWeiGeneral" method="get" enctype="multipart/form-data">
+					<form action="${pageContext.request.contextPath}/modifyFormWeiGeneral?wei_id=${weiVo.wei_id}" id="modifyFormWeiGeneral" method="post" enctype="multipart/form-data">
 						<!-- 파일업로드 -->
 						 
 						

@@ -71,8 +71,14 @@ public class WeiService {
 	
 	//장수 수정 폼 이동
 	public WeiVO modifyFormWeiGeneral(WeiVO weiVo)  {	
-		logger.info("modifyFormWeiGeneral");
+		logger.info("SERVICE :: modifyFormWeiGeneral");
 		return weiDao.modifyFormWeiGeneral(weiVo); 
+	}
+	
+	//장수 수정
+	public int modifyWeiGeneral(WeiVO weiVo)  {	
+		logger.info("SERVICE :: modifyWeiGeneral");
+		return weiDao.modifyWeiGeneral(weiVo);
 	}
 	
 

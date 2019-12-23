@@ -17,33 +17,39 @@ public class WeiDAO {
 	
 	//장수 목록
 	public List<WeiVO> listWeiGeneral(Map<String, Object> map) {
-		logger.info("DAO::selectWeiGeneral");
+		logger.info("DAO :: selectWeiGeneral");
 		return sqlSession.selectList(NS+"listWeiGeneral", map);
 	}
 	
 	//장수 목록 페이징
 	public int countWeiList(Map<String, Object> map) {
-		logger.debug("DAO::countWeiList");
+		logger.debug("DAO :: countWeiList");
 		return sqlSession.selectOne(NS+"countWeiList", map);
 	}
 	
 	//개별 장수 보기
 	public WeiVO weiCharacterIntro(WeiVO weiVo) {
-		logger.debug("DAO::weiCharacterIntro");
+		logger.debug("DAO :: weiCharacterIntro");
 		return sqlSession.selectOne(NS+"weiCharacterIntro", weiVo);
 	}
 	
 	//장수 등록
 	public int insertWeiGeneral(WeiVO weiVO) throws Exception {
-		logger.info("DAO::insertWeiGeneral");
+		logger.info("DAO :: insertWeiGeneral");
 		int row = sqlSession.insert(NS+"insertWeiGeneral", weiVO);
 		return row;
 	}
 	
 	//장수 수정 폼 이동 
 	public WeiVO modifyFormWeiGeneral(WeiVO weiVO){
-		logger.info("---modifyFormWeiGeneral");
+		logger.info("DAO :: modifyFormWeiGeneral");
 		return sqlSession.selectOne(NS+"modifyFormWeiGeneral", weiVO);
+	}
+	
+	//장수 수정
+	public int modifyWeiGeneral(WeiVO weiVO) { 
+		logger.info("DAO :: modifyWeiGeneral");
+		return sqlSession.update(NS+"modifyWeiGeneral", weiVO);
 	}
 
 }

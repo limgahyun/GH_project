@@ -77,6 +77,22 @@
 			wei_id = #{wei_id}
 	</select>
 	
+	<!-- 장수 수정 -->
+	<update id="modifyWeiGeneral" parameterType="com.project.gh.Threekingdoms.Wei.WeiVO">
+		UPDATE wei_general
+		SET
+			adult_name = #{adult_name}
+			, NAME = #{name}
+			, birth_death = #{birth_death}
+			, introduce =#{introduce}
+			, life = #{life}
+			, rating_1 = #{rating_1}
+			, rating_2 = #{rating_2}
+			, rating_3 = #{rating_3}
+		WHERE 
+			wei_id= #{wei_id}
+	</update>
+	
   
   </mapper>
   

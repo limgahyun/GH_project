@@ -13,6 +13,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
 public class WeiContoller {
@@ -74,6 +75,7 @@ public class WeiContoller {
 		return "threekingdoms/wei/characterIntro";
 	}
 	
+	
 	/*
 	 * 위나라 장수  수정 폼 이동
 	 * */
@@ -83,10 +85,22 @@ public class WeiContoller {
 		
 		weiVo = weiService.modifyFormWeiGeneral(weiVo);		
 		model.addAttribute("weiVo", weiVo);
+		
 		return "/threekingdoms/wei/modifyWei";  
 	}  
 	
-
+	/*
+	 * 위나라 장수 수정
+	 * */
+	@RequestMapping(value = "/modifyFormWeiGeneral", method = RequestMethod.POST)
+	public String modifyWeiGeneral(WeiVO weiVo, RedirectAttributes redirectAttributes) {
+		logger.info("Controller::kingdoms Wei Character modify");
+		
+		weiService.modifyWeiGeneral(weiVo);
+		redirectAttributes.addAttribute("wei_id", weiVo.getWei_id());
+		
+		return "redirect:/weiCharacterIntro";
+	}
 	
 
 }
