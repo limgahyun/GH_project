@@ -107,7 +107,7 @@
 				<div class="panel-heading">
 					<div class="row" >
 					    <div class="col-md-10">
-						    <h4><strong>위나라</strong></h4>
+						    <h4><strong>위나라 장수 등록</strong></h4>
 					    </div>
 					    <div class="col-md-2">
 					    	<input id="addBtn" class="btn btn-primary" type="submit" value="등록" style="margin-top: 5px;"/>

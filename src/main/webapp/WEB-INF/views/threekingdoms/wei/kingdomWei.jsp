@@ -46,7 +46,7 @@
 			<div class="col-md-11">
 				<ol class="breadcrumb">
 				  <li><a href="${pageContext.request.contextPath}/threekingdomsHome">Home</a></li>
-				  <li><a href="${pageContext.request.contextPath}/threekingdomsIntro">나라별 인물소개</a></li>
+				  <li><a href="${pageContext.request.contextPath}/threekingdomsIntro">나라 소개</a></li>
 				  <li class="active">위나라</li>
 				</ol>
 			</div>
