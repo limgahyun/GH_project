@@ -102,5 +102,19 @@ public class WeiContoller {
 		return "redirect:/weiCharacterIntro";
 	}
 	
+	/*
+	 * 장수삭제
+	 * */
+	@RequestMapping(value = "/deleteGeneral", method= RequestMethod.GET)
+	public String deleteGeneral(WeiVO weiVo) {
+		logger.info("Controller :: deleteGeneral");
+		
+		weiService.deleteGeneral(weiVo);
+		return "redirect:/kingdomWei";
+	}
 
+	
+		
+	
 }
+

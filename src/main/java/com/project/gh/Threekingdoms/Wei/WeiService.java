@@ -81,5 +81,10 @@ public class WeiService {
 		return weiDao.modifyWeiGeneral(weiVo);
 	}
 	
+	//장수 삭제
+	public void deleteGeneral(WeiVO weiVo) {
+		logger.info("SERVICE :: deleteGeneral");
+		weiDao.deleteGeneral(weiVo);
+	}
 
 }

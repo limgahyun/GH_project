@@ -93,6 +93,13 @@
 			wei_id= #{wei_id}
 	</update>
 	
+	<!-- 장수 삭제 -->
+	<delete id="deleteGeneral" parameterType="com.project.gh.Threekingdoms.Wei.WeiVO">
+	 DELETE 
+	 	FROM wei_general 
+	 	WHERE wei_id = #{wei_id}
+	</delete>
+	
   
   </mapper>
   

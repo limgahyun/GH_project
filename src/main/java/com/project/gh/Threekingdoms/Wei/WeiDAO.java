@@ -51,5 +51,11 @@ public class WeiDAO {
 		logger.info("DAO :: modifyWeiGeneral");
 		return sqlSession.update(NS+"modifyWeiGeneral", weiVO);
 	}
+	
+	//장수 삭제
+	public void deleteGeneral(WeiVO weiVO) {
+		logger.info("DAO :: deleteGeneral");
+		sqlSession.delete(NS + "deleteGeneral", weiVO);	
+	}
 
 }

@@ -18,7 +18,12 @@
 				$('#updateBtn').click(function(){
 					//location.href = '${pageContext.request.contextPath}/formWei';
 					$(location).attr('href', './modifyFormWeiGeneral?wei_id=' + $('#weiId').val());
+				});
 				
+				$('#delBtn').click(function(){
+					confirm("삭제 하시겠습니까?");
+					location.href = '${pageContext.request.contextPath}/deleteGeneral?wei_id=${weiVo.wei_id}';
+					//$(location).attr('href', './deleteGeneral?wei_id' + $('#weiId').val());
 				});
 			});
 		</script>
